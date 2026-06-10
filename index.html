@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Madhuray!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f8b195 0%, #f67280 100%);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 40px 30px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .title {
+            font-family: 'Pacifico', cursive;
+            font-size: 3.5em;
+            color: #f67280;
+            margin-bottom: 10px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: #883944;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out 0.5s;
+            animation-fill-mode: backwards;
+        }
+
+        .flower-bouquet {
+            width: 200px; /* Responsive size */
+            height: auto;
+            margin: 20px auto;
+            display: block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .message-section, .game-section {
+            margin-top: 40px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            animation: scaleUp 1s ease-out 1s;
+            animation-fill-mode: backwards;
+        }
+
+        .message-section h2, .game-section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2em;
+            color: #f67280;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            font-size: 1.2em;
+            line-height: 1.7;
+            color: #555;
+            white-space: pre-wrap; /* Preserves newlines from the string */
+        }
+
+        .game-section ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .game-section li {
+            background-color: #ffe5e5;
+            padding: 15px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            font-weight: 600;
+            color: #883944;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .game-section li:hover {
+            transform: translateY(-5px);
+            background-color: #f67280;
+            color: white;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes scaleUp {
+            from { transform: scale(0.7); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* Confetti Effect */
+        .confetti {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none; /* Allows clicks to pass through */
+            z-index: 1;
+        }
+
+        .confetti .particle {
+            position: absolute;
+            background-color: #f67280;
+            width: 10px;
+            height: 10px;
+            opacity: 1;
+            animation: confetti-fall linear forwards infinite;
+        }
+
+        .confetti .particle.yellow { background-color: #ffd700; }
+        .confetti .particle.blue { background-color: #87ceeb; }
+        .confetti .particle.pink { background-color: #ffc0cb; }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Cute Elements */
+        .sparkle {
+            position: absolute;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21 12 17.77 5.82 21 7 14.14 2 9.27 8.91 8.26 12 2z"></polygon></svg>');
+            background-size: contain;
+            width: 20px;
+            height: 20px;
+            color: #ffd700; /* Yellow */
+            animation: spark 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes spark {
+            from { transform: scale(0.8); opacity: 0.8; }
+            to { transform: scale(1.2); opacity: 1; }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .title { font-size: 2.8em; }
+            .subtitle { font-size: 1.2em; }
+            .container { padding: 30px 20px; }
+            .flower-bouquet { width: 150px; }
+            .game-section ul { flex-direction: column; gap: 15px; }
+        }
+
+        @media (max-width: 480px) {
+            .title { font-size: 2em; }
+            .subtitle { font-size: 1em; }
+            .container { padding: 25px 15px; }
+            .flower-bouquet { width: 120px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="confetti">
+        <!-- Confetti particles will be generated here by JavaScript -->
+    </div>
+
+    <div class="container">
+        <h1 class="title">Happy Birthday, Madhuray!</h1>
+        <p class="subtitle">With all my love, Tarun ❤️</p>
+
+        <img src="https://raw.githubusercontent.com/tarun-codes/birthday-page/main/assets/flower-bouquet.png" alt="Flower Bouquet" class="flower-bouquet">
+        <!-- You can host an image of a flower bouquet on your GitHub repo and link it here. -->
+        <!-- If you don't have one yet, you can use a placeholder or a simple text element that spins. -->
+        <!-- Example placeholder: <div class="flower-placeholder">🌸🌺🌷</div> -->
+
+        <div class="message-section">
+            <h2>A Little Note For You</h2>
+            <p class="message">
+My dearest Madhuray,
+Happy birthday! 🎉
+It feels like just yesterday we were celebrating, and here we are again, another year of adventures and making memories together. You bring so much joy, light, and laughter into my life. I'm incredibly grateful for every moment we share, for your kindness, your strength, and your amazing spirit.
+Here's to you, to another year of happiness, love, and everything wonderful. I love you more than words can say!
+Always yours,
+Tarun
+            </p>
+        </div>
+
+        <div class="game-section">
+            <h2>Fun Time!</h2>
+            <p>Pick a game to play!</p>
+            <ul>
+                <li onclick="showGameMessage('Memory Match')">Memory Match</li>
+                <li onclick="showGameMessage('Guess the Number')">Guess the Number</li>
+                <li onclick="showGameMessage('Quick Clicker')">Quick Clicker</li>
+            </ul>
+            <p id="gameMessage" style="margin-top: 20px; color: #883944; font-weight: bold;"></p>
+        </div>
+    </div>
+
+    <script>
+        // --- Confetti Animation ---
+        const confettiContainer = document.querySelector('.confetti');
+        const colors = ['#f67280', '#ffd700', '#87ceeb', '#ffc0cb', '#f8b195']; // Pink, Yellow, Blue, Light Pink, Orange
+
+        function createConfettiParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 2 + 's'; // Random delay for staggered effect
+            particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            particle.style.width = Math.random() * 15 + 5 + 'px'; // Size between 5px and 20px
+            particle.style.height = particle.style.width; // Make it square
+            confettiContainer.appendChild(particle);
+
+            // Remove particle after animation
+            particle.addEventListener('animationend', function() {
+                particle.remove();
+            });
+        }
+
+        // Generate confetti for a short burst on load
+        function startConfettiBurst() {
+            for (let i = 0; i < 100; i++) { // Number of particles in the burst
+                setTimeout(createConfettiParticle, i * 50); // Stagger the creation
+            }
+        }
+
+        // Add some random sparkles
+        function addSparkles() {
+            const sparkleCount = 10;
+            for (let i = 0; i < sparkleCount; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = Math.random() * 100 + '%';
+                sparkle.style.top = Math.random() * 100 + '%';
+                sparkle.style.animationDelay = Math.random() * 3 + 's';
+                document.body.appendChild(sparkle); // Add to body to appear over everything
+                sparkle.addEventListener('animationend', function() {
+                    sparkle.remove();
+                });
+            }
+        }
+
+        window.onload = () => {
+            startConfettiBurst();
+            addSparkles();
+        };
+
+        // --- Mini-Game Messages ---
+        function showGameMessage(gameName) {
+            const messageElement = document.getElementById('gameMessage');
+            if (gameName === 'Memory Match') {
+                messageElement.textContent = `Get ready to test your memory, ${gameName} coming soon! 🧠`;
+            } else if (gameName === 'Guess the Number') {
+                messageElement.textContent = `Can you guess the secret number? ${gameName} loading... 🔢`;
+            } else if (gameName === 'Quick Clicker') {
+                messageElement.textContent = `How fast can you click? ${gameName} activated! ⚡`;
+            }
+            // In a real implementation, you would load the actual game here.
+            // For now, it's just a placeholder message.
+        }
+
+        // --- Optional: Add more interactive elements or animations ---
+        // Example: A button to reveal a hidden message or animation
+        // You could also add event listeners for specific clicks to trigger other animations.
+
+    </script>
+</body>
+</html>
